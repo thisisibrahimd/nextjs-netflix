@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+import Button from '../components/button'
 
 export default function Home() {
   return (
@@ -9,8 +12,22 @@ export default function Home() {
       </Head>
 
       <main>
+        <Button label="Register now" />
+        <Button label="Download" />
+        <Button label="Learn more" />
+        <Button label="Log in" />
+        <Image
+          src="/images/profile.jpg" // Route of the image file
+          height={144} // Desired size with correct aspect ratio
+          width={144} // Desired size with correct aspect ratio
+          alt="John Doe"
+        />
+
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Read{' '}
+          <Link href="/posts/first-post">
+            <a>this page!</a>
+          </Link>
         </h1>
 
         <p className="description">
