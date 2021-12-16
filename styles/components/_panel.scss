@@ -1,0 +1,12 @@
+.panel {
+	background-color: red;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: -100vw;
+	transition: all .5s;
+	&.active {
+		left: 0;
+	}
+}

@@ -1,0 +1,11 @@
+@use '../styles/abstracts/mixins';
+
+.btn_ui {
+    background-color: transparent;
+    border: 0;
+    &.menu {
+        @include mixins.breakpoint(md) {
+            display:none;
+        }
+    }
+}

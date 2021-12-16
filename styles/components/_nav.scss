@@ -1,0 +1,27 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+nav {
+	//background-color: lightblue;
+	color: white;
+	display: none;
+	@include mixins.breakpoint(md) {
+		display: block;
+	}
+	ul {
+		//background-color: pink;
+		height: 100%;
+		li {
+			padding: 0 .5rem;
+			a {
+				font-family: vars.$font_primary;
+				text-decoration: none;
+				color: white;
+				font-weight: bold;
+				&:hover, &:focus {
+					color: gray;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+@use '../abstracts/mixins';
+
+// invert the padding
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 1rem;
+	//background-color: red;
+	@include mixins.breakpoint(sm) {
+		//background-color: orange;
+	}
+	@include mixins.breakpoint(md) {
+		//background-color: yellow;
+	}
+	@include mixins.breakpoint(lg) {
+		//background-color: green;
+	}
+}

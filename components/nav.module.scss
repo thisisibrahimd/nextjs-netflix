@@ -1,0 +1,19 @@
+@use '../styles/abstracts/mixins';
+
+.nav {
+    display: none;
+    @include mixins.breakpoint(md) {
+        display: block;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        li {
+            a {
+                color: white;
+                font-weight: bold;
+                padding: 1rem;
+            }
+        }
+    }
+}
