@@ -1,35 +1,10 @@
 import Link from 'next/link'
 
 import styles from './nav.module.scss'
-
-const navLinks = [
-    {
-        label: "Home",
-        path: '/'
-    },
-    {
-        label: "TV Shows",
-        path: '/tv'
-    },
-    {
-        label: "Movies",
-        path: '/movies'
-    },
-    {
-        label: "New & Popular",
-        path: '/new'
-    },
-    {
-        label: "My List",
-        path: '/my-list'
-    },
-    {
-        label: "Watch Again",
-        path: '/watch-again'
-    }
-]
+import { getNavLinks } from '../lib/api'
 
 const NavDesktop = () => {
+    const navLinks = getNavLinks();
     return (
         <nav className={styles.nav}>
             <ul>

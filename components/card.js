@@ -2,19 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import FeaturedImage from '../components/featuredImage'
 
-const Card = ({ title, image, slug }) => {
+const Card = ({ title, featuredImage, slug }) => {
     return (
         <div>
-            {image &&
-                <FeaturedImage data={image} />
-            }
-            <h3>
+            {featuredImage &&
                 <Link href={`/titles/${slug}`} passHref>
                     <a>
-                        {title}
+                <FeaturedImage data={featuredImage} />
                     </a>
                 </Link>
-            </h3>
+            }
         </div>
     )
 }

@@ -67,15 +67,14 @@ export default function Home({ movies }) {
       <main>
         <Container>
           <Row>
-
-        {movies.nodes.map((movie, index) => {
-          const {title, slug, featuredImage} = movie
-          return <>
-            <Col key={index} xs="6" sm="6" md="4" lg="3">
-              <Card title={title} featuredImage={featuredImage} slug={slug} />
-            </Col>
-          </>
-        })}
+            {movies.nodes.map((movie, index) => {
+              const {title, slug, featuredImage} = movie
+              return <>
+                <Col key={index} xs="6" sm="6" md="4" lg="3">
+                  <Card title={title} featuredImage={featuredImage} slug={slug} />
+                </Col>
+              </>
+            })}
         </Row>
         </Container>
       </main>
