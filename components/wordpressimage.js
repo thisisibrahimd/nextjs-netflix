@@ -1,17 +1,26 @@
+import classNames from 'classnames/bind'
+
 import Image from 'next/image'
 
 import styles from './wordpressimage.module.scss'
 
-const WordpressImage = ({ data }) => {
+let cx = classNames.bind(styles)
+
+const WordpressImage = ({ data, rounded }) => {
     const { sourceUrl, altText, mediaDetails } = data
     const { width, height } = mediaDetails
+
+    let imageClasses = cx({
+        rounded: rounded
+    })
 
     return <Image
         src={sourceUrl}
         width={width}
         height={height}
         alt={altText}
-        className={styles.responsive_img}
+        className={imageClasses}
+        layout="responsive"
     />
 }
 

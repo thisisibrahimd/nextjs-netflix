@@ -41,4 +41,17 @@
 	&.text-align-right {
 		text-align: right;
 	}
+	&.flex {
+		display: flex;
+	}
+	&.align-items-left {
+		
+		align-items: left;
+	}
+	&.align-items-right {
+		align-items: right;
+	}
+	&.align-items-center {
+		align-items: center;
+	}
 }

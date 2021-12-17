@@ -1,10 +1,10 @@
 import Col from '../../components/col'
 import Button from '../../components/button'
-import FeaturedImage from '../../components/featuredImage'
+import Heading from '../../components/heading'
 import Layout from '../../components/layout'
 import Row from '../../components/row'
 import StoryArt from '../../components/storyart'
-import Heading from '../../components/heading'
+import PersonCard from '../../components/personcard'
 import { getAllMovieSlugs, getMovieBySlug } from '../../lib/api'
 import Paragraph from '../../components/paragraph'
 import { convert_duration_to_hours_minutes } from '../../lib/utilities'
@@ -41,6 +41,7 @@ export async function getStaticProps({ params }) {
 
 const singleMovie = ({ movieData }) => {
     const { title, featuredImage, titleInformation, genres, ratings } = movieData
+    const { director, castMembers } = titleInformation
     const { duration, year, youtubeUrl, storyArt, storyLogo } = titleInformation
 
 
@@ -63,6 +64,28 @@ const singleMovie = ({ movieData }) => {
                 })}
             </Col>
         </Row>
+        {castMembers &&
+            <>
+                <Heading type="h2">Cast Member</Heading>
+                <Row>
+                {castMembers.map((castMember, index) => {
+                    return <Col key={index} xs="12" sm="6">
+                        <PersonCard image={castMember.featuredImage.node} name={castMember.title} />
+                    </Col>
+                })}
+                </Row>
+            </>
+        }
+        {director &&
+            <>
+                <Heading type="h2">Director</Heading>
+                <Row>
+                    <Col xs="12" sm="6">
+                        <PersonCard image={director.featuredImage.node} name={director.title} />
+                    </Col>
+                </Row>
+            </>
+        }
     </Layout>
 }
 
