@@ -10,10 +10,11 @@ const BtnUI = ({ icon, clickHandler }) => {
         btn_ui: true,
         menu: icon === "menu",
         search: icon === "search",
-        close: icon === "close"
+        close: icon === "close",
+        play: icon === "play"
     })
     return <button className={btnClasses} onClick={clickHandler}>
-        <Image src={`/images/icon-${icon}.svg`} altText={`${icon} icon`} width={36} height={36} />
+        <Image src={`/images/icon-${icon}.svg`} alttext={`${icon} icon`} width={36} height={36} />
     </button>
 }
 

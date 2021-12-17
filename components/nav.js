@@ -60,7 +60,7 @@ const SocialMedia = () => {
                     <a href={path} target="_blank">
                         <Image
                             src={`/images/icon-${icon}.svg`}
-                            altText={`${icon} icon`}
+                            alttext={`${icon} icon`}
                             width={36}
                             height={36}
                         />

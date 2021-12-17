@@ -4,14 +4,17 @@ import Nav from './nav'
 import BtnUI from './btnui'
 import Input from './input'
 import styles from './overlay.module.scss'
+import YoutubeVideo from './youtubevideo'
+import Container from './container'
 
 let cx = classNames.bind(styles)
 
-const Overlay = ({ type, closeHandler }) => {
+const Overlay = ({ type, closeHandler, youtubeUrl }) => {
     let overlayClasses = cx({
         overlay: true,
         menu: type === "menu",
-        search: type === "search"
+        search: type === "search",
+        video: type === "video"
     })
 
     return <div className={overlayClasses}>
@@ -25,6 +28,12 @@ const Overlay = ({ type, closeHandler }) => {
             <>
             <Input />
             <BtnUI icon="search" />
+            </>
+        : type === "video" ?
+            <>
+            <Container>
+                <YoutubeVideo youtubeUrl={youtubeUrl} />
+            </Container>
             </>
         : ''
         }
